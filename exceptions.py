@@ -4,12 +4,6 @@ class StatusCodeError(Exception):
     pass
 
 
-class TokenError(Exception):
-    """Ошибка в проверке токенов."""
-
-    pass
-
-
 class ResponseError(Exception):
     """Неккоректный API ответ."""
 
