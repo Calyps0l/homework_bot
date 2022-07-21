@@ -86,8 +86,10 @@ def check_response(response):
         response_message = ('Неккоректные значения в API ответе')
         raise TypeError(response_message)
     hw_list = response.get('homeworks')
-    if hw_list is None:
-        response_message = ('Ошибка доступа к ключу homeworks')
+    current_date = response.get('current_date')
+    if hw_list is None or current_date is None:
+        response_message = (
+            'Ошибка доступа к ключу homeworks и(или) current_date')
         raise KeyError(response_message)
     if not isinstance(hw_list, list):
         response_message = ('Список с ключом homeworks отсутстует')
